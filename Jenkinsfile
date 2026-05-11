@@ -1,35 +1,11 @@
-pipeline {
-    agent any
+pipeline{
+ agent any
 
-    tools {
-        maven 'Maven'
-        jdk 'jdk21'
-    }
-
-    stages {
-
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/LathamaheshwariCM123/maven.git'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'mvn clean compile'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-
-        stage('Package') {
-            steps {
-                sh 'mvn package'
-            }
-        }
-    }
+ stages{
+  stage('Build'){
+   steps{
+    sh 'mvn clean install'
+   }
+  }
+ }
 }
