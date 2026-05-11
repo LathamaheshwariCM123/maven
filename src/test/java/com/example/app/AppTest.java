@@ -1,13 +1,12 @@
 package com.example.app;
 
+import static org.junit.Assert.*;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
-public class AppTest {
+public class AppTest{
 
     @Test
-    public void testGreet() {
-        String result = App.greet("Student");
-        assertEquals("Hello, Student! Welcome to Maven CI/CD Demo.", result);
+    public void test(){
+        assertEquals("Hello Student",App.greet("Student"));
     }
 }
